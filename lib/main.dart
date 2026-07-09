@@ -1,3 +1,4 @@
+import 'package:demo/ui_helper/util.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+      theme: ThemeData
+        (
+          colorScheme: .fromSeed(seedColor: Colors.blue),
+        textTheme: TextTheme(
+          headlineLarge: TextStyle(fontSize: 41,fontWeight: FontWeight.bold),
+          headlineMedium: TextStyle(fontSize: 41,fontWeight: FontWeight.bold,color: Colors.lightGreen),
+          titleLarge: TextStyle(fontSize: 31,fontWeight: FontWeight.w500,fontStyle: FontStyle.italic),
+          titleMedium: TextStyle(fontSize: 31,fontWeight: FontWeight.w500,fontStyle: FontStyle.italic,color: Colors.orange),
+
+        )
+        ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -50,7 +61,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      body: Text('khush')
+      body:
+
+      // Style And Themes
+
+      Column(
+        children: [
+          Text('Text 1',style: Theme.of(context).textTheme.headlineLarge!.copyWith(color: Colors.orange),),
+          Text('Text 2',style: Theme.of(context).textTheme.titleLarge,),
+          Text('Text 3',style: Theme.of(context).textTheme.headlineMedium),
+          Text('Text 4',style: mTextstyle11(textcolor: Colors.blue)),
+        ],
+      )
 
           // Custom Font
 /*
@@ -158,36 +180,45 @@ class _MyHomePageState extends State<MyHomePage> {
       Column(
         //  mainAxisAlignment: MainAxisAlignment.center,
         children: [
+
           Expanded(// Expanded is used equal dived to all widget
             flex: 2,// Flex is used to a arrange the widget
             child: Container(
-           //   width: 100,
+              width: 100,
               height: 100,
               color: Colors.blue,
+              child:
+              Text('Container 1'),
             ),
           ),
           Expanded(
             flex: 4,
             child: Container(
-           //   width: 100,
+              width: 100,
               height: 100,
               color: Colors.orange,
+              child:
+              Text('Container 2'),
             ),
           ),
           Expanded(
             flex: 2,
             child: Container(
-             // width: 100,
+              width: 100,
               height: 100,
               color: Colors.blueGrey,
+              child:
+              Text('Container 3'),
             ),
           ),
           Expanded(
             flex: 1,
             child: Container(
-             // width: 100,
+              width: 100,
               height: 100,
               color: Colors.green ,
+              child:
+              Text('Container 4'),
             ),
           ),
         ],
@@ -195,11 +226,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
  */
 
+
+
           // Expanded Row
 
       // Expanded widget is used row in a width
-/*
 
+/*
       Row(
       //  mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -239,6 +272,8 @@ class _MyHomePageState extends State<MyHomePage> {
       )
 
  */
+
+
 
           // Decoration
 
@@ -455,7 +490,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       //InkWell
 
-      /*
+/*
       Center(
 
         child: InkWell(
@@ -489,7 +524,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-*/
+
+ */
+
 
 
       // Row and  column Container
