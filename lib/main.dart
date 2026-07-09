@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // Arrays
 
-    var arrNames = ['Khush','Ravi,','Krishiv','Ashok','Vipul','Deep','Harshal','Khush','Ravi,','Krishiv','Ashok',];
+  //  var arrNames = ['Khush','Ravi,','Krishiv','Ashok','Vipul','Deep','Harshal','Khush','Ravi,','Krishiv','Ashok',];
 
     return Scaffold(
       appBar: AppBar(
@@ -63,8 +63,20 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body:
 
-      // Style And Themes
+        // Card Widget
 
+      Center(
+        child: Card( // card
+          elevation: 5,
+            shadowColor: Colors.green,
+            child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text('Hello, Khush',style: TextStyle(fontSize: 25),),
+        )),
+      )
+
+      // Style And Themes
+/*
       Column(
         children: [
           Text('Text 1',style: Theme.of(context).textTheme.headlineLarge!.copyWith(color: Colors.orange),),
@@ -73,6 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
           Text('Text 4',style: mTextstyle11(textcolor: Colors.blue)),
         ],
       )
+
+ */
 
           // Custom Font
 /*
