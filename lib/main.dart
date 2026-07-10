@@ -1,5 +1,6 @@
 import 'package:demo/ui_helper/util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData
         (
-          colorScheme: .fromSeed(seedColor: Colors.blue),
+          colorScheme: .fromSeed(seedColor: Colors.green),
         textTheme: TextTheme(
           headlineLarge: TextStyle(fontSize: 41,fontWeight: FontWeight.bold),
           headlineMedium: TextStyle(fontSize: 41,fontWeight: FontWeight.bold,color: Colors.lightGreen),
@@ -40,6 +41,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var emailText = TextEditingController();
+  var passText = TextEditingController();
+
   int _counter = 0;
 
   void _incrementCounter() {
@@ -61,10 +65,86 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      body:
+      body: Text("hello,khush")
+
+          // To Get User Input
+/*
+      Center(child: Container(
+         width: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // TextField 1
+              TextField(
+                keyboardType: TextInputType.phone,
+                controller: emailText,
+                decoration: InputDecoration(
+                  hintText: 'Enter Email',
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(21),
+                      borderSide: BorderSide(
+                        color:Colors.deepOrange,
+                        width: 2
+                      )
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(21),
+                      borderSide: BorderSide(
+                          color:Colors.blue,
+                          width: 2
+                      )
+                  ),
+                  disabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color:Colors.grey,
+                          width: 2
+                      )
+                  ),
+                 // suffixText: "Username Exits",
+                  // suffixIcon: IconButton(
+                  //   icon: Icon(Icons.remove_red_eye,color: Colors.orange,),
+                  //   onPressed: (){
+                  //
+                  //   },
+                  // ),
+                  prefixIcon: Icon(Icons.phone,color: Colors.orange,)
+                ),
+              ),
+              Container(height: 11,),
+              // TextField 2
+              TextField(
+                controller: passText,
+                obscureText: true,
+                obscuringCharacter: '*',
+                decoration: InputDecoration(
+                  hintText: 'Enter Passwoord',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(21),
+                        borderSide: BorderSide(
+                          color:Colors.deepOrange,
+                        )
+                    )
+                ),
+
+              ),
+              ElevatedButton(onPressed: (){
+                String umail = emailText.text.toString();
+                String uPass = passText.text;
+                
+                print("Email: $umail, Pass: $passText");
+
+                },child: Text('Login'),
+
+              )
+            ],
+          )
+      )
+      )
+      
+ */
 
         // Card Widget
-
+/*
       Center(
         child: Card( // card
           elevation: 5,
@@ -74,6 +154,8 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Text('Hello, Khush',style: TextStyle(fontSize: 25),),
         )),
       )
+
+ */
 
       // Style And Themes
 /*
@@ -499,8 +581,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       )
+      
+ */
 
-*/
+
 
       //InkWell
 
