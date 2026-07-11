@@ -69,8 +69,46 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body:
 
-          // Date Format
+          // Date And Time Picker
 
+      Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Select Date',style: TextStyle(fontSize: 25),
+            ),
+            // Date
+            ElevatedButton(onPressed: () async {
+              DateTime? datePicked = await showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(2026),
+                  lastDate: DateTime(2030));
+              if(datePicked!=null){
+                print('Date Select: ${datePicked.day}-${datePicked.month}-${datePicked.year}');
+              }
+            },
+              child: Text('Select Date'),
+            ),
+
+            // Time
+            ElevatedButton(onPressed: () async {
+              TimeOfDay? pickedTime = await showTimePicker(
+                  context: context,
+                  initialTime: TimeOfDay.now(),
+                  initialEntryMode: TimePickerEntryMode.input,
+              );
+              if(pickedTime!=null){
+                print('Date Select: ${pickedTime.hour}-${pickedTime.minute}');
+              }
+            },
+              child: Text('Select Time'))
+          ],
+        ),
+      ),
+
+          // Date Format
+/*
       Center(
         child: Container(
           width: 200,
@@ -91,6 +129,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       )
+
+ */
 
 
       // Current Date And Time
