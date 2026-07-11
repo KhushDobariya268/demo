@@ -1,6 +1,7 @@
 import 'package:demo/ui_helper/util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,8 +42,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var emailText = TextEditingController();
-  var passText = TextEditingController();
+//  var emailText = TextEditingController();
+//   var passText = TextEditingController();
 
   int _counter = 0;
 
@@ -66,10 +67,34 @@ class _MyHomePageState extends State<MyHomePage> {
 
         title: Text(widget.title),
       ),
-      body: Text('khush')
-      
-          // Current Date And Time
-     /*     
+      body:
+
+          // Date Format
+
+      Center(
+        child: Container(
+          width: 200,
+          height: 200,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Current Time: ${DateFormat('EEEE').format(time)}',style: TextStyle(fontSize: 25),
+              ),
+              ElevatedButton(onPressed: (){
+                setState(() {
+
+                });
+              },
+                child: Text('Current Time'),
+              ),
+            ],
+          ),
+        ),
+      )
+
+
+      // Current Date And Time
+     /*
       Center(
         child: Container(
           width: 200,
