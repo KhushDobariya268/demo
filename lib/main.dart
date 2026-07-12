@@ -78,45 +78,66 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body:
 
-          // Gridview
+      // Grid View builder
 
+      GridView.builder(
+
+          itemBuilder: (context, index) {
+            return Container(color: arrcolors[index],);
+          },
+        itemCount: arrcolors.length,
+
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 100,
+          crossAxisSpacing: 11,
+           mainAxisSpacing: 11,
+
+        //SliverGridDelegateWithFixedCrossAxisCount(
+          // crossAxisCount: 3,
+         // crossAxisSpacing: 11,
+         // mainAxisSpacing: 11,
+
+        ),
+      )
+
+          // Grid View count
+
+      /*
       GridView.count(
-          crossAxisCount: 2,
+        crossAxisCount: 4,
+        crossAxisSpacing: 11,
+        mainAxisSpacing: 11,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(color: arrcolors[0],),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(color: arrcolors[1],),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(color: arrcolors[2],),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(color: arrcolors[3],),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(color: arrcolors[4],),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(color: arrcolors[5],),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(color: arrcolors[6],),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(color: arrcolors[7],),
-          ),
+          Container(color: arrcolors[0],),
+          Container(color: arrcolors[1],),
+          Container(color: arrcolors[2],),
+          Container(color: arrcolors[3],),
+          Container(color: arrcolors[4],),
+          Container(color: arrcolors[5],),
+          Container(color: arrcolors[6],),
+          Container(color: arrcolors[7],),
         ],
       )
+
+       */
+/*
+      GridView.extent(
+        maxCrossAxisExtent: 100,
+        crossAxisSpacing: 11,
+        mainAxisSpacing: 11,
+        children: [
+          Container(color: arrcolors[0],),
+          Container(color: arrcolors[1],),
+          Container(color: arrcolors[2],),
+          Container(color: arrcolors[3],),
+          Container(color: arrcolors[4],),
+          Container(color: arrcolors[5],),
+          Container(color: arrcolors[6],),
+          Container(color: arrcolors[7],),
+        ],
+      )
+
+ */
 
           // Date And Time Picker
 /*
