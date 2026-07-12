@@ -55,6 +55,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var arrcolors = [Colors.red,
+      Colors.orange,
+      Colors.grey,
+      Colors.blue,
+      Colors.pink,
+      Colors.green,
+      Colors.purpleAccent,
+      Colors.brown,
+    ];
 
     // Arrays
 
@@ -69,8 +78,48 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body:
 
-          // Date And Time Picker
+          // Gridview
 
+      GridView.count(
+          crossAxisCount: 2,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(color: arrcolors[0],),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(color: arrcolors[1],),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(color: arrcolors[2],),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(color: arrcolors[3],),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(color: arrcolors[4],),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(color: arrcolors[5],),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(color: arrcolors[6],),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(color: arrcolors[7],),
+          ),
+        ],
+      )
+
+          // Date And Time Picker
+/*
       Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -106,6 +155,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+
+ */
 
           // Date Format
 /*
