@@ -80,10 +80,128 @@ callBack(){
 
         title: Text(widget.title),
       ),
-      body:
+      body: Container(
+        child: Column(
+          children: [
+          /*  Expanded(
+              flex: 2,
+              child: Container(
+                // height: 200,
+                color: arrcolors[0],
+                child: ListView.builder(itemBuilder: (context, index) => Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    width: 100,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.green,
+
+                    ),
+                  ),
+                ),itemCount: 10,scrollDirection: Axis.horizontal,),
+              ),
+            ),
+
+           */
+
+            Expanded(
+              flex: 4,
+              child: Container(
+              //  height: 400,
+                color: arrcolors[1],
+                child: ListView.builder(itemBuilder: (context, index) => Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                  leading: CircleAvatar(backgroundColor: Colors.green,),
+                  title: Text('Name'),
+                  subtitle: Text('Mob no'),
+                    trailing: Icon(Icons.delete),
+                  ),
+                )
+                ),
+              ),
+            ),
+
+            Expanded(
+              flex: 1,
+              child: Container(
+               // height: 300,
+                color: arrcolors[2],
+                child: ListView.builder(itemBuilder: (context, index) =>
+                Padding(padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(11),
+                    color: Colors.blue,
+                  ),
+                ),
+                ),itemCount: 10,scrollDirection: Axis.horizontal,
+                ),
+              ),
+            ),
+
+            Expanded(
+              flex: 2,
+              child: Container(
+                // height: 300,
+                color: arrcolors[4],
+                child: GridView.count(crossAxisCount: 4,
+                  children: [
+                    Padding(
+                      padding: const  EdgeInsets.all(8.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(11),
+                        color: Colors.blue
+                      ),
+                    ),
+                    ),
+                    Padding(
+                      padding: const  EdgeInsets.all(8.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(11),
+                            color: Colors.blue
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const  EdgeInsets.all(8.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(11),
+                            color: Colors.blue
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const  EdgeInsets.all(8.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(11),
+                            color: Colors.blue
+                        ),
+                      ),
+                    ),
+                  ],),
+              ),
+            ),
+          ],
+        ),
+      )
+
+
+    );
+  }
+}
+
+class CatItems extends StatelessElement{
+  CatItems(super.widget);
+
+}
 
           // Call Back
-
+/*
       // Write in class _MyHomePageState is
       // callBack(){
       //   print('Clicked!!!');
@@ -93,6 +211,8 @@ callBack(){
         onPressed: callBack,
         child: Text('Click me'),
       )
+
+ */
 
       // Grid View builder
 /*
@@ -909,6 +1029,4 @@ callBack(){
       //     print('Button Pressed');
       //   },
       // ),
-    );
-  }
-}
+
