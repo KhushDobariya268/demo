@@ -1,7 +1,10 @@
+import 'package:demo/Custom_widget.dart';
+import 'package:demo/stack_widget.dart';
 import 'package:demo/ui_helper/util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData
         (
-          colorScheme: .fromSeed(seedColor: Colors.green),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         textTheme: TextTheme(
           headlineLarge: TextStyle(fontSize: 41,fontWeight: FontWeight.bold),
           headlineMedium: TextStyle(fontSize: 41,fontWeight: FontWeight.bold,color: Colors.lightGreen),
@@ -27,11 +30,19 @@ class MyApp extends StatelessWidget {
 
         )
         ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: StackWidget(),
     );
   }
 }
 
+
+
+
+
+
+
+
+/*
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -71,121 +82,35 @@ callBack(){
 
     // Arrays
 
-  //  var arrNames = ['Khush','Ravi,','Krishiv','Ashok','Vipul','Deep','Harshal','Khush','Ravi,','Krishiv','Ashok',];
+    //  var arrNames = ['Khush','Ravi,','Krishiv','Ashok','Vipul','Deep','Harshal','Khush','Ravi,','Krishiv','Ashok',];
 
     var time = DateTime.now();
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        appBar: AppBar(
+          backgroundColor: Theme
+              .of(context)
+              .colorScheme
+              .inversePrimary,
 
-        title: Text(widget.title),
-      ),
-      body: Container(
+          title: Text(widget.title),
+        ),
+        body:
+
+        // Custom Widget
+
+      Container(
         child: Column(
           children: [
-          /*  Expanded(
-              flex: 2,
-              child: Container(
-                // height: 200,
-                color: arrcolors[0],
-                child: ListView.builder(itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    width: 100,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.green,
 
-                    ),
-                  ),
-                ),itemCount: 10,scrollDirection: Axis.horizontal,),
-              ),
-            ),
 
-           */
+            CatItems(),
 
-            Expanded(
-              flex: 4,
-              child: Container(
-              //  height: 400,
-                color: arrcolors[1],
-                child: ListView.builder(itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ListTile(
-                  leading: CircleAvatar(backgroundColor: Colors.green,),
-                  title: Text('Name'),
-                  subtitle: Text('Mob no'),
-                    trailing: Icon(Icons.delete),
-                  ),
-                )
-                ),
-              ),
-            ),
+            Contact(),
 
-            Expanded(
-              flex: 1,
-              child: Container(
-               // height: 300,
-                color: arrcolors[2],
-                child: ListView.builder(itemBuilder: (context, index) =>
-                Padding(padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: 200,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(11),
-                    color: Colors.blue,
-                  ),
-                ),
-                ),itemCount: 10,scrollDirection: Axis.horizontal,
-                ),
-              ),
-            ),
+            SubCatItems(),
 
-            Expanded(
-              flex: 2,
-              child: Container(
-                // height: 300,
-                color: arrcolors[4],
-                child: GridView.count(crossAxisCount: 4,
-                  children: [
-                    Padding(
-                      padding: const  EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(11),
-                        color: Colors.blue
-                      ),
-                    ),
-                    ),
-                    Padding(
-                      padding: const  EdgeInsets.all(8.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            color: Colors.blue
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const  EdgeInsets.all(8.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            color: Colors.blue
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const  EdgeInsets.all(8.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(11),
-                            color: Colors.blue
-                        ),
-                      ),
-                    ),
-                  ],),
-              ),
-            ),
+            BottomMenu(),
+
           ],
         ),
       )
@@ -195,12 +120,136 @@ callBack(){
   }
 }
 
-class CatItems extends StatelessElement{
-  CatItems(super.widget);
+class CatItems extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return  Expanded(
+      flex: 2,
+      child: Container(
+        // height: 200,
+        color: Colors.red,
+        child: ListView.builder(itemBuilder: (context, index) => Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SizedBox(
+            width: 100,
+            child: CircleAvatar(
+              backgroundColor: Colors.green,
+
+            ),
+          ),
+        ),itemCount: 10,scrollDirection: Axis.horizontal,),
+      ),
+    );
+  }
 
 }
 
-          // Call Back
+class Contact extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return   Expanded(
+      flex: 4,
+      child: Container(
+        //  height: 400,
+        color: Colors.orange,
+        child: ListView.builder(itemBuilder: (context, index) => Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListTile(
+            leading: CircleAvatar(backgroundColor: Colors.green,),
+            title: Text('Name'),
+            subtitle: Text('Mob no'),
+            trailing: Icon(Icons.delete),
+          ),
+        )
+        ),
+      ),
+    );
+  }
+
+}
+
+class SubCatItems extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return  Expanded(
+      flex: 1,
+      child: Container(
+        // height: 300,
+        color: Colors.grey,
+        child: ListView.builder(itemBuilder: (context, index) =>
+            Padding(padding: const EdgeInsets.all(8.0),
+              child: Container(
+                width: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(11),
+                  color: Colors.blue,
+                ),
+              ),
+            ),itemCount: 10,scrollDirection: Axis.horizontal,
+        ),
+      ),
+    );
+  }
+
+}
+
+class BottomMenu extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 2,
+      child: Container(
+        // height: 300,
+        color: Colors.pink,
+        child: GridView.count(crossAxisCount: 4,
+          children: [
+            Padding(
+              padding: const  EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(11),
+                    color: Colors.blue
+                ),
+              ),
+            ),
+            Padding(
+              padding: const  EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(11),
+                    color: Colors.blue
+                ),
+              ),
+            ),
+            Padding(
+              padding: const  EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(11),
+                    color: Colors.blue
+                ),
+              ),
+            ),
+            Padding(
+              padding: const  EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(11),
+                    color: Colors.blue
+                ),
+              ),
+            ),
+          ],),
+      ),
+    );
+  }
+
+}
+
+
+
+
+        // Call Back
 /*
       // Write in class _MyHomePageState is
       // callBack(){
@@ -214,7 +263,7 @@ class CatItems extends StatelessElement{
 
  */
 
-      // Grid View builder
+        // Grid View builder
 /*
       GridView.builder(
 
@@ -237,9 +286,9 @@ class CatItems extends StatelessElement{
       )
 */
 
-          // Grid View count
+        // Grid View count
 
-      /*
+        /*
       GridView.count(
         crossAxisCount: 4,
         crossAxisSpacing: 11,
@@ -276,7 +325,7 @@ class CatItems extends StatelessElement{
 
  */
 
-          // Date And Time Picker
+        // Date And Time Picker
 /*
       Center(
         child: Column(
@@ -316,7 +365,7 @@ class CatItems extends StatelessElement{
 
  */
 
-          // Date Format
+        // Date Format
 /*
       Center(
         child: Container(
@@ -342,8 +391,8 @@ class CatItems extends StatelessElement{
  */
 
 
-      // Current Date And Time
-     /*
+        // Current Date And Time
+        /*
       Center(
         child: Container(
           width: 200,
@@ -367,7 +416,7 @@ class CatItems extends StatelessElement{
       
       */
 
-          // To Get User Input
+        // To Get User Input
 /*
       Center(child: Container(
          width: 300,
@@ -457,7 +506,7 @@ class CatItems extends StatelessElement{
 
  */
 
-      // Style And Themes
+        // Style And Themes
 /*
       Column(
         children: [
@@ -470,7 +519,7 @@ class CatItems extends StatelessElement{
 
  */
 
-          // Custom Font
+        // Custom Font
 /*
       // pubspec.yaml change
 
@@ -488,41 +537,41 @@ class CatItems extends StatelessElement{
 
  */
 
-          // Images Avatar
+        // Images Avatar
 
 /*
-      Center(
-        child: Container(
+        Center(
+          child: Container(
 
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: CircleAvatar(
-            child: Container(
-              width: 50,
-              height: 50,
-              child: Column(
-               children: [
-                 Container(
-                 width: 100,
-                     height: 50,
-                     child: Image.asset('assets/images/boy.png')
-                 ),
-               ],
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
               ),
-            ),
-            //Image provider
-          //  backgroundImage: AssetImage('assets/images/boy.png'),
-            backgroundColor: Colors.green,
-            radius: 100,
+              child: CircleAvatar(
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  child: Column(
+                    children: [
+                      Container(
+                          width: 100,
+                          height: 50,
+                          child: Image.asset('assets/images/boy.png')
+                      ),
+                    ],
+                  ),
+                ),
+                //Image provider
+                //  backgroundImage: AssetImage('assets/images/boy.png'),
+                backgroundColor: Colors.green,
+                radius: 100,
 
-          )
+              )
+            )
+          ,
         )
-        ,
-      )
-      
- */
 
+
+    );
 
 
 /*
@@ -545,8 +594,8 @@ class CatItems extends StatelessElement{
 
  */
 
-          // Margin
-      /*
+    // Margin
+    /*
       Container(
         color: Colors.blueGrey,
           margin: EdgeInsets.all(11),
@@ -558,8 +607,8 @@ class CatItems extends StatelessElement{
 
        */
 
-          // Padding
-      /*
+    // Padding
+    /*
       Padding(
       //  padding: EdgeInsets.only(top: 11,left: 34), // if you are give a sum particular side to give a padding is used to a EdgeInsets.only
         padding: EdgeInsetsGeometry.all(11), // All is used to a all side to give a padding
@@ -568,9 +617,9 @@ class CatItems extends StatelessElement{
 
        */
 
-          // Expanded Column
+    // Expanded Column
 
-      // Expanded widget is used Column in a width
+    // Expanded widget is used Column in a width
 
 /*
       Column(
@@ -623,10 +672,9 @@ class CatItems extends StatelessElement{
  */
 
 
+    // Expanded Row
 
-          // Expanded Row
-
-      // Expanded widget is used row in a width
+    // Expanded widget is used row in a width
 
 /*
       Row(
@@ -670,12 +718,11 @@ class CatItems extends StatelessElement{
  */
 
 
+    // Decoration
 
-          // Decoration
+    //   This is a Decoration to used a to decorat a box
 
-      //   This is a Decoration to used a to decorat a box
-
-      /*
+    /*
 
       Container(
         width: double.infinity,
@@ -722,17 +769,17 @@ class CatItems extends StatelessElement{
 
        */
 
-      // Container(
-      //   color: Colors.blue.shade50,
-      //   child: Container(
-      //     width: 100,
-      //     height: 100,
-      //     color: Colors.blueGrey,
-      //
-      //   ),
-      // )
+    // Container(
+    //   color: Colors.blue.shade50,
+    //   child: Container(
+    //     width: 100,
+    //     height: 100,
+    //     color: Colors.blueGrey,
+    //
+    //   ),
+    // )
 
-          // ListView separated to all widget
+    // ListView separated to all widget
 /*
       ListView.separated(itemBuilder: (context, index) {
         return Row(
@@ -767,9 +814,9 @@ class CatItems extends StatelessElement{
 */
 
 
-          //  ListView builder
+    //  ListView builder
 
-      /*
+    /*
       ListView.builder(itemBuilder: (context, index) {
         //                          called index    ^
         //                                          |
@@ -785,7 +832,7 @@ class CatItems extends StatelessElement{
 
 */
 
-      // scroll view all
+    // scroll view all
 
 /*
       Padding(
@@ -885,8 +932,7 @@ class CatItems extends StatelessElement{
  */
 
 
-
-      //InkWell
+    //InkWell
 
 /*
       Center(
@@ -926,16 +972,15 @@ class CatItems extends StatelessElement{
  */
 
 
+    // Row and  column Container
 
-      // Row and  column Container
-
-        // Container(
-           // height: 300,
-          // width: 300,
+    // Container(
+    // height: 300,
+    // width: 300,
 
 
-        // Row
-      /*
+    // Row
+    /*
         child: Row(
           // mainAxisAlignment: MainAxisAlignment.spaceAround, // starting point and ending point is spred half in horizontal
           // mainAxisAlignment: MainAxisAlignment.spaceEvenly, // evry text is evenly space between all in horizontal
@@ -962,8 +1007,8 @@ class CatItems extends StatelessElement{
         ),
       )
 */
-      // Column
-      /*
+    // Column
+    /*
      child:  Column(
       // mainAxisAlignment: MainAxisAlignment.spaceAround, // starting point and ending point is spred half in vertical
       // mainAxisAlignment: MainAxisAlignment.spaceEvenly, // evry text is evenly space between all in vertical
@@ -1012,8 +1057,8 @@ class CatItems extends StatelessElement{
     )
 
       */
-      // Image assets
-      /*
+    // Image assets
+    /*
       Center(
         child:Container(
             width: 100,
@@ -1021,12 +1066,18 @@ class CatItems extends StatelessElement{
            child: Image.asset('assets/images/'))
       ),*/
 
-      //Button
+    //Button
 
-      // ElevatedButton(
-      //   child: Text('Elevated Button'),
-      //   onPressed: () {
-      //     print('Button Pressed');
-      //   },
-      // ),
+    // ElevatedButton(
+    //   child: Text('Elevated Button'),
+    //   onPressed: () {
+    //     print('Button Pressed');
+    //   },
+    // ),
 
+  }
+}
+
+ */
+
+ */
