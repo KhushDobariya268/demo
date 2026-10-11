@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:demo/wrap_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,8 +33,13 @@ class MyApp extends StatelessWidget {
 
         )
         ),
-      home:
+      home: WrapWidget(),
+    );
+  }
+}
 
+
+/*
       // Custom Widget
 
       Center(
@@ -70,9 +76,8 @@ class MyApp extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
+
+*/
 
 
 
