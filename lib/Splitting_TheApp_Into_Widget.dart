@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 
 
-class CustomWidget extends StatelessWidget {
-  const CustomWidget({super.key});
+class SplittingTheappIntoWidget extends StatelessWidget {
+  const SplittingTheappIntoWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

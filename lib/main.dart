@@ -1,6 +1,7 @@
-import 'package:demo/Custom_widget.dart';
+import 'package:demo/Splitting_TheApp_Into_Widget.dart';
 import 'package:demo/stack_widget.dart';
 import 'package:demo/ui_helper/util.dart';
+import 'package:demo/widgets/rounded_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
@@ -28,9 +29,47 @@ class MyApp extends StatelessWidget {
           titleLarge: TextStyle(fontSize: 31,fontWeight: FontWeight.w500,fontStyle: FontStyle.italic),
           titleMedium: TextStyle(fontSize: 31,fontWeight: FontWeight.w500,fontStyle: FontStyle.italic,color: Colors.orange),
 
+
         )
         ),
-      home: StackWidget(),
+      home:
+
+      // Custom Widget
+
+      Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 150,
+              height: 50,
+              child: RoundedButton(
+                btnName: 'Play',
+                icon: Icon(Icons.play_arrow),
+                callback: (){
+                  print('Playing..');
+                },
+                textStyle: mTextstyle16(),
+              ),
+            ),
+            Container(
+              height: 11,
+            ),
+            Container(
+              width: 150,
+              height: 50,
+              child: RoundedButton(
+                btnName: 'Press',
+                callback: (){
+                  print('Pressing..');
+                },
+                bgColor: Colors.orange,
+                textStyle: mTextstyle21(),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
