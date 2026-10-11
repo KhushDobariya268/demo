@@ -8,6 +8,7 @@ import 'package:intl/intl.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:demo/wrap_widget.dart';
 import 'package:demo/sizebox_widget.dart';
+import 'package:demo/rich_text_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
 
         )
         ),
-      home: SizeboxWidget(),
+      home: RichTextWidget(),
     );
   }
 }
