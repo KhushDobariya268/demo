@@ -9,6 +9,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:demo/wrap_widget.dart';
 import 'package:demo/sizebox_widget.dart';
 import 'package:demo/rich_text_widget.dart';
+import 'package:demo/icon_widget.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +38,7 @@ class MyApp extends StatelessWidget {
 
         )
         ),
-      home: RichTextWidget(),
+      home: IconWidget(),
     );
   }
 }
